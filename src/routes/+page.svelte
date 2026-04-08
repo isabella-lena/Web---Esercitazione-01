@@ -1,12 +1,17 @@
 <script>
+    import {website} from "lib/state.svelte"
+
     import CanvasSqare from "$lib/components/CanvasSqare.svelte";
     import ClicksCounter from "$lib/components/ClicksCounter.svelte";
+    import TitleEditor from "$lib/components/titleEditor.svelte";
     import TodoList from "$lib/components/TodoList.svelte";
 
     let count = $state(5)
 </script>
 <h1>Welcome to SvelteKit</h1>
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+
+<TitleEditor/>
 
 <ClicksCounter bind:initialCount={count}/>
 {#if count > 10 && count < 20}
