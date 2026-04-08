@@ -1,6 +1,7 @@
 <script>
     import CanvasSqare from "$lib/components/CanvasSqare.svelte";
     import ClicksCounter from "$lib/components/ClicksCounter.svelte";
+    import TodoList from "$lib/components/TodoList.svelte";
 
     let count = $state(5)
 </script>
@@ -10,10 +11,15 @@
 <ClicksCounter bind:initialCount={count}/>
 {#if count > 10 && count < 20}
     <p>count from parent is {count}</p>
+{:else if count > 30}
+    <p>that's a lot of clicks! </p>
+{:else}
+    <p> count is not in range</p>
 {/if}
 
 
 <CanvasSqare/>
+<TodoList/>
 
 <style> 
 h1 {

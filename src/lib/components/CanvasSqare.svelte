@@ -12,7 +12,7 @@
         context.fillRect(0, 0, size, size)
     })
 </script>
-
+<!-- untrack si utilizza per determinare cosa non reagisce -->
 <!-- quando si caricano dei dati è meglio usare l'onMount, perchè carica i dati 
  solo una volta, l'effect, invece lo carica continuamente -->
 
