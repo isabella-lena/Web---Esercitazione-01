@@ -1,15 +1,34 @@
+<script>
+    import { onMount } from "svelte"
+    let size = $state(50)
+    let color = $state("#ff3e00")
+
+    let canvas 
+
+    $effect(() => {
+        const context = canvas.getContext("2d")
+        context.clearRect(0, 0, canvas.width, canvas.height)
+
+        context.fillStyle = color
+        context.fillRect(0, 0, size, size)
+    })
+</script>
+
+<!-- quando si caricano dei dati è meglio usare l'onMount, perchè carica i dati 
+ solo una volta, l'effect, invece lo carica continuamente -->
+
 <h3>Canvas Square</h3>
 
 <article>
-    <canvas width="100" height="100"></canvas>
+    <canvas bind:this={canvas} width="100" height="100"></canvas>
 
     <nav>
         <label>
-            Size: <input type="range">
+            Size: <input type="range" bind:value={size}>
         </label>
 
         <label>
-            color: <input type="color">
+            color: <input type="color" bind:value={color}>
         </label>
     </nav>
 </article>
