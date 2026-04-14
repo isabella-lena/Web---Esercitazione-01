@@ -1,21 +1,23 @@
 <script>
     let todos = $state([
         {title: "Assignment 1", done: false},
-        {title: "Assignment 2", done: true},
+        {title: "<i>Assignment 2</i>", done: true},
         {title: "Assignment 3", done: false},
     ])
 
     let groceries = $state([
         {title: "Apple", done: false},
-        {title: "Bread", done: true},
+        {title: "<b>Bread</b>", done: true},
         {title: "Salmon", done: false},
     ])
 </script>
 
 {#snippet todoItem(todo)}
     <li>
+    <label>
         <input type="checkbox" bind:checked={todo.done}>
-        {todo.title}
+        {@html todo.title}
+    </label>
     </li>
 {/snippet}
 
@@ -33,3 +35,10 @@
     {@render todoItem(grocery)} 
     {/each}
 </ul>
+
+<style>
+    label :global {
+        i {color: green;}
+        b {color: blue;}
+    }
+</style>
