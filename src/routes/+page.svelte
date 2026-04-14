@@ -1,5 +1,5 @@
 <script>
-    import {website} from "lib/state.svelte"
+    import {website} from "$lib/state.svelte.js"
 
     import CanvasSqare from "$lib/components/CanvasSqare.svelte";
     import ClicksCounter from "$lib/components/ClicksCounter.svelte";
