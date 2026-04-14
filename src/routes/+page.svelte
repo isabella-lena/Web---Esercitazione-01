@@ -7,13 +7,19 @@
     import TodoList from "$lib/components/TodoList.svelte";
 
     let count = $state(5)
+
+    $inspect(count);
 </script>
 <h1>Welcome to SvelteKit</h1>
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
 
 <TitleEditor/>
 
-<ClicksCounter bind:initialCount={count}/>
+<ClicksCounter 
+bind:initialCount={count} 
+willIncrement={(count) => console.log("Count was:", count)}
+/>
+
 {#if count > 10 && count < 20}
     <p>count from parent is {count}</p>
 {:else if count > 30}
