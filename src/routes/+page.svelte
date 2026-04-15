@@ -3,9 +3,9 @@
 
     import CanvasSqare from "$lib/components/CanvasSqare.svelte";
     import ClicksCounter from "$lib/components/ClicksCounter.svelte";
-    import TitleEditor from "$lib/components/titleEditor.svelte";
     import TodoList from "$lib/components/TodoList.svelte";
-
+    import TitleEditor from "$lib/components/TitleEditor.svelte";
+    
     let count = $state(5)
 
     $inspect(count);
@@ -14,7 +14,7 @@
         window.alert("Ciao mondo")
     }
 </script>
-<h1>Welcome to SvelteKit</h1>
+<h1>{website.title}</h1>
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
 
 <TitleEditor/>
