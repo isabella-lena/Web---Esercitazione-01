@@ -1,10 +1,10 @@
 <script>
-    import { on } from "svelte/events";
     let {
-        initialCount: count = $bindable(0)
-        willIncrement = () => {};
+        initialCount: count = $bindable(0),
+        willIncrement = () => {},
         didIncrement = () => {}
     } = $props()
+
     let doubled = $derived(count * 2)
 
     const increment = () => {
